@@ -28,7 +28,7 @@ export default function ContactPage() {
 
             <div className="space-y-6">
                <a 
-                 href="mailto:hello@example.com" 
+                 href="mailto:your-email@example.com" 
                  className="flex items-center gap-4 group"
                >
                  <div className="p-3 rounded-xl glass border-border/50 group-hover:text-accent transition-all">
@@ -36,7 +36,7 @@ export default function ContactPage() {
                  </div>
                  <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">hello@example.com</p>
+                    <p className="font-medium">your-email@example.com</p>
                  </div>
                </a>
                <a 
@@ -81,7 +81,7 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-medium">Email</label>
-                        <Input type="email" placeholder="john@example.com" className="glass border-border/40" />
+                        <Input type="email" placeholder="email@example.com" className="glass border-border/40" />
                       </div>
                    </div>
                    <div className="space-y-2">

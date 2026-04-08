@@ -29,7 +29,7 @@ export function ContactSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button size="lg" className="btn-gradient border-0 px-8 h-12 w-full sm:w-auto" asChild>
-              <a href="mailto:hello@example.com">
+              <a href="mailto:your-email@example.com">
                 <Mail className="mr-2 h-4 w-4" />
                 Email Me
               </a>

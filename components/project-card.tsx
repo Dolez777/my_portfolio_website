@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Project } from "@/lib/projects";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -18,19 +19,36 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8, scale: 1.02 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative h-full flex flex-col glass rounded-2xl overflow-hidden border-border/50 hover:border-accent/40 transition-all duration-500"
+      className="group relative h-full flex flex-col glass rounded-2xl overflow-hidden border-border/50 hover:border-accent/40 transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-accent/5"
     >
-      {/* Visual Header / Image Placeholder */}
+      {/* Absolute Link for entire card */}
+      <Link 
+        href={`/projects/${project.id}`} 
+        className="absolute inset-0 z-20"
+        aria-label={`View details for ${project.title}`}
+      />
+      {/* Visual Header / Image */}
       <div className="relative h-48 w-full overflow-hidden bg-muted/20">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 group-hover:from-accent/10 group-hover:to-primary/10 transition-colors" />
-        {/* If we had images we'd use Next/Image here. For now a stylistic placeholder */}
-        <div className="flex items-center justify-center h-full">
-           <div className="text-accent/20 group-hover:text-accent/40 transition-colors">
-              <span className="font-heading font-bold text-4xl opacity-10">{project.title[0]}</span>
-           </div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 group-hover:from-accent/10 group-hover:to-primary/10 transition-colors z-10" />
+        
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-full">
+             <div className="text-accent/20 group-hover:text-accent/40 transition-colors">
+                <span className="font-heading font-bold text-4xl opacity-10">{project.title[0]}</span>
+             </div>
+          </div>
+        )}
 
         {/* Categories */}
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -67,26 +85,35 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           )}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3">
+        {/* Footer actions */}
+        <div className="flex items-center gap-2 pt-4 relative z-30">
           {project.githubUrl && (
-            <Button variant="ghost" size="sm" className="h-9 px-3 gap-2" asChild>
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="sm" className="h-9 w-9 p-0 hover:bg-accent/10" asChild>
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <Github className="h-4 w-4" />
-                Code
+                <span className="sr-only">GitHub</span>
               </a>
             </Button>
           )}
           {project.liveUrl && (
-            <Button variant="ghost" size="sm" className="h-9 px-3 gap-2" asChild>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4" />
+            <Button variant="ghost" size="sm" className="h-9 px-3 text-xs hover:bg-accent/10" asChild>
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
                 Demo
               </a>
             </Button>
           )}
-          <Button variant="secondary" size="sm" className="h-9 px-3 ml-auto text-xs" asChild>
-             <Link href={`/projects/${project.id}`}>Details</Link>
+          <Button variant="secondary" size="sm" className="h-9 px-3 ml-auto text-xs pointer-events-none">
+             Details
           </Button>
         </div>
       </div>

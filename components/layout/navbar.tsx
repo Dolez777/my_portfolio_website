@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
-import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -46,17 +46,14 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity group"
         >
-          <Image 
-            src="/logo-purple.png" 
-            alt="Logo" 
-            width={32}
-            height={32}
-            className="object-contain"
-            priority
-          />
-          <span className="gradient-text font-heading font-bold text-lg">Portfolio</span>
+          <div className="relative flex items-center justify-center w-10 h-10">
+            <span className="font-logo font-black text-2xl tracking-tighter text-accent cyberpunk-glow">
+              TV
+            </span>
+          </div>
+          <span className="gradient-text font-heading font-bold text-lg hidden sm:block">Portfolio</span>
         </Link>
 
         {/* Desktop nav */}

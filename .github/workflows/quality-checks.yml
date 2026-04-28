@@ -29,7 +29,7 @@ jobs:
           NEXT_PUBLIC_EMAIL_DOMAIN: "proton.me"
           NEXT_PUBLIC_GITHUB_URL: "https://github.com/Dolez777"
           NEXT_PUBLIC_LINKEDIN_URL: "https://www.linkedin.com/in/teemu-valimaki/"
-          NEXT_PUBLIC_FORMSPREE_KEY: ${{ secrets.NEXT_PUBLIC_FORMSPREE_KEY }}
+          NEXT_PUBLIC_FORMSPREE_KEY: "${{ secrets.NEXT_PUBLIC_FORMSPREE_KEY }}"
 
       - name: Lint
         run: npm run lint
@@ -49,7 +49,7 @@ jobs:
       - name: Lighthouse CI
         run: npm run lhci
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_GITHUB_APP_TOKEN: "${{ secrets.LHCI_GITHUB_APP_TOKEN }}"
 
       - name: Upload Test Results
         if: always()

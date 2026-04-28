@@ -15,18 +15,18 @@
   --secondary-foreground: 240 5.9% 10%;
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
-  --accent: 270 76% 53%;
+  --accent: 270 80% 50%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 270 76% 53%;
+  --ring: 270 80% 50%;
   --radius: 0.625rem;
 
   /* Custom extended tokens */
-  --gradient-from: 270 76% 53%;
-  --gradient-to: 310 76% 53%;
+  --gradient-from: 280 80% 55%;
+  --gradient-to: 260 85% 45%;
   --glass-bg: 0 0% 100% / 0.6;
   --glass-border: 0 0% 100% / 0.2;
   --glass-blur: 12px;
@@ -36,7 +36,7 @@
   --cat-mobile: 142 71% 45%;
   --cat-data: 280 67% 55%;
   --cat-automation: 25 95% 53%;
-  --cat-ai: 350 80% 55%;
+  --cat-ai: 285 70% 50%;
 }
 
 .dark {
@@ -53,13 +53,13 @@
   --secondary-foreground: 0 0% 98%;
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
-  --accent: 270 76% 60%;
+  --accent: 265 89% 60%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
-  --ring: 270 76% 60%;
+  --ring: 265 89% 60%;
 
   /* Custom extended tokens — dark overrides */
   --glass-bg: 240 10% 10% / 0.5;
@@ -94,6 +94,7 @@
   --font-heading: var(--font-heading-var);
   --font-body: var(--font-body-var);
   --font-code: var(--font-code-var);
+  --font-logo: var(--font-logo-var);
 }
 
 * {
@@ -127,10 +128,20 @@ code, pre, .font-code {
 
 /* Gradient text utility */
 .gradient-text {
+  color: hsl(var(--accent)); /* Accessibility fallback */
   background: linear-gradient(135deg, hsl(var(--gradient-from)), hsl(var(--gradient-to)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Cyberpunk glow */
+.cyberpunk-glow {
+  text-shadow: 0 0 10px hsla(var(--accent) / 0.5), 0 0 20px hsla(var(--accent) / 0.3);
+}
+
+.font-logo {
+  font-family: var(--font-logo), system-ui, sans-serif;
 }
 
 /* Gradient button */

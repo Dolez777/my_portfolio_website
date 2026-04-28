@@ -40,6 +40,7 @@ export function ContactSection() {
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="p-3 rounded-full glass border-border/50 hover:text-accent transition-all hover:scale-110"
+                 aria-label="GitHub Profile"
                >
                  <Github className="h-5 w-5" />
                </a>
@@ -48,6 +49,7 @@ export function ContactSection() {
                  target="_blank" 
                  rel="noopener noreferrer"
                  className="p-3 rounded-full glass border-border/50 hover:text-accent transition-all hover:scale-110"
+                 aria-label="LinkedIn Profile"
                >
                  <Linkedin className="h-5 w-5" />
                </a>

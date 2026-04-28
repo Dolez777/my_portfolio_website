@@ -90,7 +90,8 @@ export function CopyEmail({
 			className={cn(
 				'gap-2 min-w-[140px] transition-all duration-300',
 				className,
-			)}>
+			)}
+			aria-label="Copy email address">
 			{showIcon && (
 				<div className="relative h-4 w-4">
 					<Copy

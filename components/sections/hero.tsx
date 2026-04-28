@@ -6,7 +6,6 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { CopyEmail } from '@/components/shared/copy-email';
-import { SecureText } from '@/components/shared/secure-text';
 
 export function Hero() {
 	return (
@@ -53,13 +52,13 @@ export function Hero() {
 				</motion.div>
 
 				<motion.h1
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.5, delay: 0.1 }}
+					initial={{ opacity: 1, y: 10 }}
+					animate={{ y: 0 }}
+					transition={{ duration: 0.4, delay: 0 }}
 					className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight mb-8 leading-tight">
 					Hi, I&apos;m{' '}
 					<span className="gradient-text">
-						<SecureText textParts={[process.env.NEXT_PUBLIC_NAME || 'Your Name']} />
+						{process.env.NEXT_PUBLIC_NAME || 'Teemu Välimäki'}
 					</span>.
 					<br />I build the <span className="italic">
 						future

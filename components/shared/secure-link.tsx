@@ -40,6 +40,7 @@ export function SecureLink({ hrefParts, labelParts, className, children }: Secur
 				className
 			)}
 			title={`Visit ${label}`}
+			aria-label={`Visit ${label}`}
 		>
 			{children || label}
 		</button>

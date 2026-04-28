@@ -1,0 +1,61 @@
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { ProjectCard } from '@/components/project-card';
+
+// Mock framer-motion
+vi.mock('framer-motion', () => ({
+  motion: {
+    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+  },
+}));
+
+// Mock next/image
+vi.mock('next/image', () => ({
+  __esModule: true,
+  default: (props: any) => <img {...props} />,
+}));
+
+const mockProject = {
+  id: 'test-project',
+  title: 'Test Project',
+  description: 'A test project description',
+  categories: ['web', 'ai'],
+  techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis'],
+  githubUrl: 'https://github.com/test/project',
+  liveUrl: 'https://test-project.com',
+  date: '2024-01-01',
+};
+
+describe('ProjectCard', () => {
+  it('renders project information correctly', () => {
+    render(<ProjectCard project={mockProject as any} index={0} />);
+    
+    expect(screen.getByText('Test Project')).toBeInTheDocument();
+    expect(screen.getByText('A test project description')).toBeInTheDocument();
+    expect(screen.getByText('React')).toBeInTheDocument();
+    expect(screen.getByText('TypeScript')).toBeInTheDocument();
+  });
+
+  it('renders badges for categories', () => {
+    render(<ProjectCard project={mockProject as any} index={0} />);
+    
+    expect(screen.getByText('web')).toBeInTheDocument();
+    expect(screen.getByText('ai')).toBeInTheDocument();
+  });
+
+  it('shows "+n more" if tech stack is long', () => {
+    render(<ProjectCard project={mockProject as any} index={0} />);
+    
+    expect(screen.getByText('+1 more')).toBeInTheDocument();
+  });
+
+  it('links to the correct URLs', () => {
+    render(<ProjectCard project={mockProject as any} index={0} />);
+    
+    const githubLink = screen.getByRole('link', { name: /github/i });
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/test/project');
+    
+    const demoLink = screen.getByRole('link', { name: /demo/i });
+    expect(demoLink).toHaveAttribute('href', 'https://test-project.com');
+  });
+});

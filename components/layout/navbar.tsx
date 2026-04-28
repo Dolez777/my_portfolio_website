@@ -73,15 +73,6 @@ export function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button
-            asChild
-            size="sm"
-            className="hidden md:inline-flex btn-gradient border-0"
-          >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
-          </Button>
 
           {/* Mobile navigation */}
           <Sheet>
@@ -114,12 +105,6 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <Separator className="bg-border/50" />
-                <Button asChild size="lg" className="btn-gradient border-0 w-full">
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                    Download Resume
-                  </a>
-                </Button>
               </div>
             </SheetContent>
           </Sheet>

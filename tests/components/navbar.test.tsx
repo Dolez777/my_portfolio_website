@@ -11,14 +11,14 @@ vi.mock('next/navigation', () => ({
 // Mock next/link to just render children
 vi.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: any }) => (
-    <a href={href} {...props}>{children}</a>
+  default: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
+    <a href={href} {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>{children}</a>
   ),
 }));
 
 describe('Navbar', () => {
   it('renders navigation links', () => {
-    (usePathname as any).mockReturnValue('/');
+    vi.mocked(usePathname).mockReturnValue('/');
     render(<Navbar />);
     
     expect(screen.getByText(/Home/i)).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('Navbar', () => {
   });
 
   it('highlights the active link', () => {
-    (usePathname as any).mockReturnValue('/projects');
+    vi.mocked(usePathname).mockReturnValue('/projects');
     render(<Navbar />);
     
     // Find the links and check the first one (desktop)
@@ -38,7 +38,7 @@ describe('Navbar', () => {
   });
 
   it('renders the logo', () => {
-    (usePathname as any).mockReturnValue('/');
+    vi.mocked(usePathname).mockReturnValue('/');
     render(<Navbar />);
     
     expect(screen.getByText(/Portfolio/i)).toBeInTheDocument();

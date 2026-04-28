@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Mail, GraduationCap, Briefcase, Code } from 'lucide-react';
+import { GraduationCap, Briefcase, Code } from 'lucide-react';
 import { CopyEmail } from '@/components/shared/copy-email';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
 	title: 'About',

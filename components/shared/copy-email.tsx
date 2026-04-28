@@ -85,7 +85,7 @@ export function CopyEmail({
 
 	return (
 		<Button
-			variant={variant === 'button' ? 'default' : (variant as any)}
+			variant={variant === 'button' ? 'default' : (variant as "default" | "destructive" | "outline" | "secondary" | "ghost" | "link")}
 			onClick={handleCopy}
 			className={cn(
 				'gap-2 min-w-[140px] transition-all duration-300',

@@ -21,7 +21,7 @@ describe('ContactForm', () => {
   });
 
   it('submits form data to Formspree', async () => {
-    (global.fetch as any).mockResolvedValue({ ok: true });
+    vi.mocked(global.fetch).mockResolvedValue({ ok: true } as Response);
     
     render(<ContactForm />);
     
@@ -51,7 +51,7 @@ describe('ContactForm', () => {
   });
 
   it('shows error toast on failure', async () => {
-    (global.fetch as any).mockResolvedValue({ ok: false });
+    vi.mocked(global.fetch).mockResolvedValue({ ok: false } as Response);
     
     render(<ContactForm />);
     

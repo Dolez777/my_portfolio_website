@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Mail, Code2 } from 'lucide-react';
+import { Github, Linkedin, Code2 } from 'lucide-react';
 import { CopyEmail } from '@/components/shared/copy-email';
 import { SecureLink } from '@/components/shared/secure-link';
 

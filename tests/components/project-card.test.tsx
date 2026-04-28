@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { ProjectCard } from '@/components/project-card';
+import { Project } from '@/lib/projects';
 
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
@@ -16,11 +17,11 @@ vi.mock('next/image', () => ({
   default: (props: { src: string; alt: string }) => <img {...props} />,
 }));
 
-const mockProject = {
+const mockProject: Project = {
   id: 'test-project',
   title: 'Test Project',
   description: 'A test project description',
-  categories: ['web', 'ai'] as const,
+  categories: ['web', 'ai'],
   techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis'],
   githubUrl: 'https://github.com/test/project',
   liveUrl: 'https://test-project.com',

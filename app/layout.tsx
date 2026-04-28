@@ -40,6 +40,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <a 
+            href="#main-content" 
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground p-4 rounded-md z-[100]"
+          >
+            Skip to content
+          </a>
           {children}
           <Toaster />
         </ThemeProvider>

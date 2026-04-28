@@ -67,10 +67,11 @@ export function ContactForm() {
 		<form onSubmit={handleSubmit} className="space-y-6">
 			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 				<div className="space-y-2">
-					<label className="text-sm font-medium">
+					<label htmlFor="name" className="text-sm font-medium">
 						Name
 					</label>
 					<Input
+						id="name"
 						name="name"
 						required
 						placeholder="John Doe"
@@ -78,10 +79,11 @@ export function ContactForm() {
 					/>
 				</div>
 				<div className="space-y-2">
-					<label className="text-sm font-medium">
+					<label htmlFor="email" className="text-sm font-medium">
 						Email
 					</label>
 					<Input
+						id="email"
 						name="email"
 						type="email"
 						required
@@ -91,10 +93,11 @@ export function ContactForm() {
 				</div>
 			</div>
 			<div className="space-y-2">
-				<label className="text-sm font-medium">
+				<label htmlFor="subject" className="text-sm font-medium">
 					Subject
 				</label>
 				<Input
+					id="subject"
 					name="subject"
 					required
 					placeholder="Inquiry about project"
@@ -102,10 +105,11 @@ export function ContactForm() {
 				/>
 			</div>
 			<div className="space-y-2">
-				<label className="text-sm font-medium">
+				<label htmlFor="message" className="text-sm font-medium">
 					Message
 				</label>
 				<Textarea
+					id="message"
 					name="message"
 					required
 					placeholder="How can I help you?"

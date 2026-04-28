@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, Code2 } from "lucide-react";
+import { Menu } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/utils";
@@ -45,10 +46,17 @@ export function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-heading font-bold text-lg hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          <Code2 className="h-5 w-5 text-accent" />
-          <span className="gradient-text">Portfolio</span>
+          <Image 
+            src="/logo-purple.png" 
+            alt="Logo" 
+            width={32}
+            height={32}
+            className="object-contain"
+            priority
+          />
+          <span className="gradient-text font-heading font-bold text-lg">Portfolio</span>
         </Link>
 
         {/* Desktop nav */}

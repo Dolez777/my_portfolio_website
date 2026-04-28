@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     description:
       "Personal portfolio of a full-stack developer specializing in web apps, mobile apps, data & automation, and AI tooling.",
   },
+  icons: {
+    icon: "/logo-purple.png",
+    shortcut: "/logo-purple.png",
+    apple: "/logo-purple.png",
+  },
 };
 
 export default function RootLayout({

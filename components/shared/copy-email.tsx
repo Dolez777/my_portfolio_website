@@ -53,7 +53,7 @@ export function CopyEmail({
 					'text-muted-foreground hover:text-accent transition-colors flex items-center gap-2 group',
 					className,
 				)}
-				aria-label="Copy email address">
+				aria-label="Email Me">
 				{showIcon && (
 					<div className="relative h-4 w-4">
 						<Mail
@@ -91,7 +91,7 @@ export function CopyEmail({
 				'gap-2 min-w-[140px] transition-all duration-300',
 				className,
 			)}
-			aria-label="Copy email address">
+			aria-label="Email Me">
 			{showIcon && (
 				<div className="relative h-4 w-4">
 					<Copy

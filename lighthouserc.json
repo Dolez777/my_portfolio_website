@@ -2,13 +2,14 @@
   "ci": {
     "collect": {
       "startServerCommand": "npm run start",
-      "startServerReadyPattern": "ready in",
+      "startServerReadyPattern": "Ready in",
       "url": [
         "http://localhost:3000/"
       ],
       "numberOfRuns": 1,
       "settings": {
-        "chromeFlags": "--no-sandbox --disable-setuid-sandbox --disable-gpu --disable-dev-shm-usage"
+        "chromeFlags": "--no-sandbox --disable-setuid-sandbox --disable-gpu --disable-dev-shm-usage",
+        "throttlingMethod": "provided"
       }
     },
     "assert": {

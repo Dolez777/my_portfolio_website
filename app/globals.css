@@ -15,24 +15,24 @@
   --secondary-foreground: 240 5.9% 10%;
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
-  --accent: 221 83% 53%;
+  --accent: 270 76% 53%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 221 83% 53%;
+  --ring: 270 76% 53%;
   --radius: 0.625rem;
 
   /* Custom extended tokens */
-  --gradient-from: 221 83% 53%;
-  --gradient-to: 270 76% 53%;
+  --gradient-from: 270 76% 53%;
+  --gradient-to: 310 76% 53%;
   --glass-bg: 0 0% 100% / 0.6;
   --glass-border: 0 0% 100% / 0.2;
   --glass-blur: 12px;
 
   /* Category colors */
-  --cat-web: 221 83% 53%;
+  --cat-web: 270 76% 53%;
   --cat-mobile: 142 71% 45%;
   --cat-data: 280 67% 55%;
   --cat-automation: 25 95% 53%;
@@ -53,13 +53,13 @@
   --secondary-foreground: 0 0% 98%;
   --muted: 240 3.7% 15.9%;
   --muted-foreground: 240 5% 64.9%;
-  --accent: 217 91% 60%;
+  --accent: 270 76% 60%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
-  --ring: 217 91% 60%;
+  --ring: 270 76% 60%;
 
   /* Custom extended tokens — dark overrides */
   --glass-bg: 240 10% 10% / 0.5;
@@ -91,9 +91,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
-  --font-code: var(--font-code);
+  --font-heading: var(--font-heading-var);
+  --font-body: var(--font-body-var);
+  --font-code: var(--font-code-var);
 }
 
 * {

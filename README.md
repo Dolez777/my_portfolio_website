@@ -10,6 +10,26 @@ A high-end, motion-driven personal portfolio website built with **Next.js 15**, 
 - **Responsive & Accessible**: Fully optimized for mobile, tablet, and desktop with semantic HTML and accessible UI primitives (Radix UI).
 - **SEO Ready**: Optimized metadata and title structures for every page.
 
+## 🚀 Getting Started
+
+1. **Clone and Install:**
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   npm install
+   ```
+
+2. **Configure Environment:**
+   Copy `.env.example` to `.env.local` and fill in your personal details:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+3. **Run Development Server:**
+   ```bash
+   npm run dev
+   ```
+
 ## 🛠️ Built With
 
 - **Framework**: [Next.js 15](https://nextjs.org/)
